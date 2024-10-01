@@ -19,8 +19,8 @@ export class CustomItemDto {
   name!: string;
   quantity!: number;
   list_price!: number;
-  summary!: { key: string; value: string }[]; // Add summary field
-  product_id!: string; // Add productId field
+  summary!: { key: string; value: string }[];
+  product_id!: string;
 }
 
 export class GiftCertificateSenderDto {
@@ -105,7 +105,7 @@ export async function createCustomiseCart(dto: CreateOrderDto) {
 
     if (!response.ok) {
       const errorBody = await response.json();
-      console.error('BigCommerce API error:', errorBody);
+
       throw {
         status: response.status,
         message:
